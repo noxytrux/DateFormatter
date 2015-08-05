@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DateFormatter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XFe-HG-tyg">
+                                <rect key="frame" x="290" y="290" width="37" height="37"/>
+                                <color key="color" red="0.98039215690000003" green="0.49803921569999998" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="j1b-iw-pg1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DateFormatterCellIdentifier" textLabel="nqD-ij-hMb" rowHeight="60" style="IBUITableViewCellStyleDefault" id="kOe-Xp-zTg" customClass="FormatterTableViewCell" customModule="DateFormatter" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kOe-Xp-zTg" id="24N-Ox-oyS">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nqD-ij-hMb">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="069-zo-Ua6"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="8zn-yc-5cQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="j1b-iw-pg1" secondAttribute="bottom" id="H3j-M5-0JB"/>
+                            <constraint firstItem="j1b-iw-pg1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="InM-P2-dyr"/>
+                            <constraint firstAttribute="trailing" secondItem="j1b-iw-pg1" secondAttribute="trailing" id="XGB-Fn-X9T"/>
+                            <constraint firstAttribute="centerY" secondItem="XFe-HG-tyg" secondAttribute="centerY" constant="-8.5" id="kAU-8U-HI0"/>
+                            <constraint firstItem="j1b-iw-pg1" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="kNi-E9-5qF"/>
+                            <constraint firstAttribute="centerX" secondItem="XFe-HG-tyg" secondAttribute="centerX" constant="-8.5" id="ypi-3Q-Qj9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateTableView" destination="j1b-iw-pg1" id="5DY-BB-cZc"/>
+                        <outlet property="loadingIndicator" destination="XFe-HG-tyg" id="PNU-Yb-rpb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
